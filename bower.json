@@ -1,0 +1,21 @@
+{
+  "name": "buscapi",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "daniella lopes"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-route": "^1.6.5"
+  }
+}
