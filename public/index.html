@@ -10,18 +10,18 @@
      <div class="container" ng-app="IntegrationController" ng-controller="IntegrationController">
      <h1>Bem-vindo ao Buscapi</h1>
     <div class="form-group">
-    
-      <label>Número do pedido: {{total}}</label>
-      <input type="text" class="form-control" ng-model="nome">
-      <a href="#" class="btn btn-sucess btn-sm" ng-click="obterPedido(1);">Buscar</a>
+      <label>Número do pedido: </label>
+      <input type="number" class="form-control" ng-model="numeroPedido">
+      <a href="#" class="btn btn-sucess btn-sm" ng-click="obterPedido(numeroPedido);">Buscar</a>
     </div>
 
-        <p>Acompanhe seu Pedido: {{total}}</p>
-        <div ng-view></div>
-        <script src="vendor/angular/angular.js"></script>
-        <script src="vendor/angular-route/angular-route.js"></script>
-        <script src="js/main.js"></script> 
-        <script src="js/controllers/IntegrationController.js"></script>
+    <p>Acompanhe seu Pedido: </p>
+    <p ng-show="Mensagem">{{Mensagem}}</p>
+    
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular-route/angular-route.js"></script>
+    <script src="js/main.js"></script> 
+    <script src="js/controllers/IntegrationController.js"></script>
                 
     </body> 
 </html> 

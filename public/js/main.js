@@ -1,1 +1,6 @@
-angular.module('buscapi', ['ngRoute']);
+var app = angular.module('buscapi', ['ngRoute']);
+
+app.config(['$httpProvider', function ($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }]);
