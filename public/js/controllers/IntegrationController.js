@@ -1,9 +1,10 @@
 angular.module('buscapi').controller('IntegrationController', function($scope, $http) {
 
     $scope.Mensagem = "";
+    
 
     $scope.obterPedido = function(numeroPedido) {
-        
+       
         var obj = {
             "user": {
                 "password": "buscapigama8",
@@ -14,7 +15,7 @@ angular.module('buscapi').controller('IntegrationController', function($scope, $
         $http.post('https://www.loggi.com/api/v1/usuarios/login/', obj)
         .then(function(response) {
             var urlPedido = "https://www.loggi.com/api/v1/pedidos-status/" + numeroPedido + "/";
-
+            
             var req = {
                 method: 'GET',
                 url: urlPedido,
@@ -24,6 +25,7 @@ angular.module('buscapi').controller('IntegrationController', function($scope, $
             }
 
             $http(req).then(function successCallback(response) {
+                
                 switch (response.data.status) {
                     case "allocating":
                         $scope.Mensagem = "Pedido em alocação, procurando um mensageiro para atendê-lo.";
@@ -36,6 +38,7 @@ angular.module('buscapi').controller('IntegrationController', function($scope, $
                         break;
                     case "finished":
                         $scope.Mensagem = "Pedido finalizado.";
+                        alert.Mensagem;
                         break;
                     case "cancelled":
                         $scope.Mensagem = "Pedido cancelado, sem cobrança.";
@@ -47,7 +50,7 @@ angular.module('buscapi').controller('IntegrationController', function($scope, $
                         break;
                 }
                 console.log(response.data);
-            }, function errorCallback(response) {
+            }, function errorCallback(response) {alert(1234);
                 if (response.status == 404) {
                     $scope.Mensagem = "Pedido não encontrado";
                 } else {
