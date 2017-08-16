@@ -23,37 +23,29 @@
 		.form-control {
 			margin-bottom: 5px;
 		}
-		.selecionado {
-			background-color: yellow;
-		}
 		.negrito {
 			font-weight: bold;
 		}
 	</style>    
 
-</head>
+	</head>
 
     <body class="container" ng-app="IntegrationController" ng-controller="IntegrationController">
-    <div class="jumbotron">
+    <div class="jumbotron"> 
 
     <h1>Bem-vindo ao Buscajá</h1>
     <div class="form-group">
-    <label>Número do pedido: </label>
-    
-    </div>
-    
-    <input class="form-control" type="number" class="table-striped ng-model="numeroPedido">
-    <a href="#" class="btn btn-primary" ng-click="obterPedido(numeroPedido);">Buscar</a>
-    <a href="#" class="btn btn-primary" ng-click="numeroPedido">Limpar busca</a>
-   
-    
-            
-    </div>
+	<label>Número do pedido: </label>
+	
+	<input type="number" class="form-control" ng-model="numeroPedido">
+	<a href="#" class="btn btn-sucess btn-primary" ng-click="obterPedido(numeroPedido);">Buscar</a>
+	<a href="#" class="btn btn-sucess btn-primary" ng-click="obterPedido(numeroPedido);">Limpar Busca</a>
+		</div>
 
-    <center><p> Status do pedido: </p></center>
-    <center><p ng-show="Mensagem">{{Mensagem}}</p></center>
-    
-    <script src="vendor/angular/angular.js"></script>
+	<p>Acompanhe seu Pedido: </p>
+	<p ng-show="Mensagem">{{Mensagem}}</p>
+	
+	<script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular-route/angular-route.js"></script>
     <script src="js/main.js"></script> 
     <script src="js/controllers/IntegrationController.js"></script>
