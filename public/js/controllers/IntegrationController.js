@@ -1,7 +1,8 @@
 angular.module('buscapi').controller('IntegrationController', function($scope, $http) {
 
     $scope.Mensagem = "";
-          
+    
+   
     $scope.obterPedido = function(numeroPedido) {;
                var obj = {
             "user": {
