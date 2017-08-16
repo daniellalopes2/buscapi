@@ -1,20 +1,18 @@
 angular.module('buscapi').controller('IntegrationController', function($scope, $http) {
 
     $scope.Mensagem = "";
-    
-
-    $scope.obterPedido = function(numeroPedido) {
-       
-        var obj = {
+          
+    $scope.obterPedido = function(numeroPedido) {;
+               var obj = {
             "user": {
                 "password": "buscapigama8",
                 "email": "daniellalopes2@gmail.com"
             }
         }
         
-        $http.post('https://www.loggi.com/api/v1/usuarios/login/', obj)
+        $http.post('https://staging.loggi.com/api/v1/usuarios/login/', obj)
         .then(function(response) {
-            var urlPedido = "https://www.loggi.com/api/v1/pedidos-status/" + numeroPedido + "/";
+            var urlPedido = "https://staging.loggi.com/api/v1/pedidos-status/" + numeroPedido;
             
             var req = {
                 method: 'GET',
@@ -50,7 +48,7 @@ angular.module('buscapi').controller('IntegrationController', function($scope, $
                         break;
                 }
                 console.log(response.data);
-            }, function errorCallback(response) {alert(1234);
+            }, function errorCallback(response) {
                 if (response.status == 404) {
                     $scope.Mensagem = "Pedido não encontrado";
                 } else {
