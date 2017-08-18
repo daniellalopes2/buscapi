@@ -2,7 +2,8 @@ var express = require('express');
 
 module.exports = function() {
 var app = express();
-process.env.PORT;
+let port = process.env.PORT || 3000;
+app.set('port', port);
 
 app.use(express.static('./public'));
 return app;
